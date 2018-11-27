@@ -3,7 +3,8 @@ var express = require("express");
 //create an instance of express server
 var app = express();
 
-app.get("/",function(req,res){
+//request is user, response is what your response to user
+app.get("/",function(request,response){
 	res.send('<h1>This is my web app</h1>');
 });
 
