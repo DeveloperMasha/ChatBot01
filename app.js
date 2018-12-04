@@ -10,7 +10,7 @@ const {WebhookClient,Card,} = require('dialogflow-fulfillment');
 //create an instance of express server
 const expressApp = express().use(bodyParser.json());
 
-expressApp.post('/fulfillment', functions.https.onRequest((request, response) => {
+app.post('/fulfillment', functions.https.onRequest((request, response) => {
     const agent = new WebhookClient({ request, response });
      function welcome(agent) {
       agent.add(`Welcome to my agent in Heroku!`);
