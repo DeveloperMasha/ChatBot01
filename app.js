@@ -14,7 +14,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     function welcome(agent) {
         agent.add(`Welcome to my agent in Heroku!`);
         agent.add(new Card({
-            title: `This is Agent in Heroku`,
+            title: `This is Agent in NihonOnly`,
             imageUrl: 'http://weknowyourdreams.com/images/robot/robot-02.jpg',
             text: `I am here to serve you.\nPlease free to ask me anything! 💁`,
             buttonText: 'Click Me to know more about me!',
