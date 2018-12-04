@@ -12,9 +12,9 @@ const app = express().use(bodyParser.json());
 app.post('/fulfillment', functions.https.onRequest((request, response) => {
     const agent = new WebhookClient({ request, response });
     function welcome(agent) {
-        agent.add(`Welcome!`);
+        agent.add(`Welcome to NihonOnly Website!`);
         agent.add(new Card({
-            title: `This is your friendly service agent from NihonOnly`,
+            title: `This is your friendly service agent Heroku`,
             imageUrl: 'http://weknowyourdreams.com/images/robot/robot-02.jpg',
             text: `I am here to serve you.\nPlease free to ask me anything! 💁`,
             buttonText: 'Click Me to know more about me!',
