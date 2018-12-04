@@ -2,7 +2,6 @@
 var express = require("express");
 //create an instance of express server
 
-
 const bodyParser = require('body-parser');
 const functions = require('firebase-functions');
 const {WebhookClient,Card,} = require('dialogflow-fulfillment');
