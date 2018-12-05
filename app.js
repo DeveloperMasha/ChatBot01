@@ -26,8 +26,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
         agent.add(`Welcome to NihonOnly Website!`);
         agent.add(new Card({
             title: `This is your friendly service agent Heroku`,
-            //imageUrl: 'http://weknowyourdreams.com/images/robot/robot-02.jpg',
-            imageUrl:'https://intersolinc.files.wordpress.com/2015/01/japan-flag-and-map1.gif',
+            imageUrl: 'http://weknowyourdreams.com/images/robot/robot-02.jpg',
             text: `I am here to serve you.\nPlease free to ask me anything! 💁`,
             buttonText: 'Click Me to know more about me!',
             buttonUrl: 'https://assistant.google.com/'
