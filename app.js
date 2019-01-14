@@ -27,7 +27,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
         agent.add(new Card({
             title: `This is your friendly service agent Heroku`,
             //imageUrl: 'http://weknowyourdreams.com/images/robot/robot-02.jpg',
-            imageUrl:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj2yfeKqu3fAhUQfCsKHViaB6kQjRx6BAgBEAU&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fjapan-icon-vector-17433435&psig=AOvVaw0bP7s7rhwAGBVWVzlCYtyQ&ust=1547557233289914"
+            imageUrl:"https://heroku-chatbotsg.herokuapp.com/fulfillment",
             text: `I am here to serve you.\nPlease free to ask me anything! 💁`,
             buttonText: 'Click Me to know more about me!',
             buttonUrl: 'https://assistant.google.com/'
