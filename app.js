@@ -53,8 +53,8 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     let intentMap = new Map();
     intentMap.set('Default Welcome Intent', welcome);
     intentMap.set('Default Fallback Intent', fallback);
-    intentMap.set('TellDateIntent', telldatefunction);
-    intentMap.set('Weather Intent', tellweatherfunction);
+    //intentMap.set('TellDateIntent', telldatefunction);
+    intentMap.set('Weather Intent', telldatefunction);
     agent.handleRequest(intentMap);
 })
 );
