@@ -45,12 +45,16 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
         
     }
 
+    function tellweatherfunction(agent) {
+        agent.add('The weather is...');
+    }
 
     // Run the proper function handler based on the matched Dialogflow intent name
     let intentMap = new Map();
     intentMap.set('Default Welcome Intent', welcome);
     intentMap.set('Default Fallback Intent', fallback);
     intentMap.set('TellDateIntent', telldatefunction);
+    intentMap.set('WeatherIntent',tellweatherfunction);
     agent.handleRequest(intentMap);
 })
 );
