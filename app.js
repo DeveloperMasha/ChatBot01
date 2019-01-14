@@ -46,7 +46,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     }
 
     function tellweatherfunction(agent) {
-        agent.add('The weather is...');
+        agent.add(`The weather is...`);
     }
 
     // Run the proper function handler based on the matched Dialogflow intent name
