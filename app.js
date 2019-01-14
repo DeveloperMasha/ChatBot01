@@ -41,7 +41,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     }
 
     function telldatefunction(agent) {
-        agent.add(`Today is a good day!`);
+        agent.add(`Today is a great day!`);
         
     }
 
