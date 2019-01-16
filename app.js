@@ -50,7 +50,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     }
 
     // Weather Intent
-    app.post('/ai', (req, res) => {
+    app.post('/fulfillment', (req, res) => {
         if (req.body.result.action === 'weather') {
           let city = req.body.result.parameters['JapanCity'];
           let restUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID='+WEATHER_API_KEY+'&q='+city;
