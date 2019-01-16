@@ -60,33 +60,12 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     intentMap.set('Default Welcome Intent', welcome);
     intentMap.set('Default Fallback Intent', fallback);
     intentMap.set('TellDateIntent', telldatefunction);
-    //intentMap.set('Weather Intent', tellweatherfunction);
+    intentMap.set('Weather Intent', tellweatherfunction);
     agent.handleRequest(intentMap);
 })
 );
 
-//weather intent
-app.post('/fulfillment', (req, res) => {
-    if (req.body.result.action === 'weather') {
-      let city = req.body.result.parameters['JapanCity'];
-      let restUrl ="http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=f94fb06603ef464c16a935d57b3e2eb1";
-  
-      request.get(restUrl, (err, response, body) => {
-        if (!err && response.statusCode == 200) {
-          let json = JSON.parse(body);
-          let msg = json.weather[0].description + ' and the temperature is ' + json.main.temp + ' ℉';
-          return res.json({
-            speech: msg,
-            displayText: msg,
-            source: 'weather'});
-        } else {
-          return res.status(400).json({
-            status: {
-              code: 400,
-              errorType: 'I failed to look up the city name.'}});
-        }})
-    });
-    //end of weather intent
+
 
 //Start the express server to listen to a port in the server
 var listener = app.listen(process.env.PORT,
