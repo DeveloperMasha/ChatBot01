@@ -36,7 +36,6 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     }
 
 
-
     function fallback(agent) {
         agent.add(`I didn't understand`);
         agent.add(`I'm sorry, can you try again?`);
@@ -49,8 +48,8 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 
     // Weather Intent
     function tellweatherfunction(agent) {
-   //     let city = request.body.result.parameters['JapanCity'];
-        agent.add(`The weather is good!`);
+        let city = request.body.result.parameters['JapanCity'];
+        agent.add(`The weather is good!`+city);
         //end of weather intent
     
     }
