@@ -50,22 +50,8 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     // Weather Intent
     function tellweatherfunction(agent) {
         let city = request.body.result.parameters['JapanCity'];
-        let restUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID='+f94fb06603ef464c16a935d57b3e2eb1+'?q='+city;
-        request.get(restUrl, (err, response, body) => {
-            if (!err && response.statusCode == 200) {
-              let json = JSON.parse(body);
-              let msg = json.weather[0].description + ' and the temperature is ' + json.main.temp + ' ℉';
-              return res.json({
-                speech: msg,
-                displayText: msg,
-                source: 'weather'});
-            } else {
-                return res.status(400).json({
-                    status: {
-                      code: 400,
-                      errorType: 'I failed to look up the city name.'}});
-
-        agent.add(`The weather is good!`);
+   
+        agent.add(`The weather is good!`+city);
         //end of weather intent
     }})
     }
