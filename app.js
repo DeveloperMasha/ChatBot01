@@ -48,8 +48,8 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 
     // Weather Intent
     function tellweatherfunction(agent) {
-        let city = request.body.result.parameters['JapanCity'];
-        agent.add(`The weather is good.`+city+'!');
+       // let city = request.body.result.parameters['JapanCity'];
+        agent.add(`The weather is good.`+JapanCity+'!');
         //end of weather intent
     
     }
