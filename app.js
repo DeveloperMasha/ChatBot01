@@ -48,7 +48,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 
     // Weather Intent
     function tellweatherfunction(agent) {
-       var city = request.queryResult.parameters.JapanCity
+       //var city = request.queryResult.parameters.JapanCity
         agent.add('The weather is good!');
         //end of weather intent
     
