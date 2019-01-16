@@ -35,6 +35,8 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
         );
     }
 
+
+
     function fallback(agent) {
         agent.add(`I didn't understand`);
         agent.add(`I'm sorry, can you try again?`);
@@ -45,17 +47,11 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
         
     }
 
-    function tellweatherfunction(agent) {
-        agent.add(`The weather is good!`);
-    }
-
     // Weather Intent
-    app.post('/fulfillment', (req, res) => {
-        if (req.body.result.action === 'weather') {
-          let city = req.body.result.parameters['JapanCity'];
-          let restUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID='+f94fb06603ef464c16a935d57b3e2eb1+'&q='+city;
-      
-          request.get(restUrl, (err, response, body) => {
+    function tellweatherfunction(agent) {
+        let city = request.body.result.parameters['JapanCity'];
+        let restUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID='+f94fb06603ef464c16a935d57b3e2eb1+'&q='+city;
+        request.get(restUrl, (err, response, body) => {
             if (!err && response.statusCode == 200) {
               let json = JSON.parse(body);
               let msg = json.weather[0].description + ' and the temperature is ' + json.main.temp + ' ℉';
@@ -64,14 +60,17 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
                 displayText: msg,
                 source: 'weather'});
             } else {
-              return res.status(400).json({
-                status: {
-                  code: 400,
-                  errorType: 'I failed to look up the city name.'}});
-            }})
-        }
-    //end of weather intent
+                return res.status(400).json({
+                    status: {
+                      code: 400,
+                      errorType: 'I failed to look up the city name.'}});
 
+        agent.add(`The weather is good!`);
+        //end of weather intent
+    }})
+    }
+
+  
     // Run the proper function handler based on the matched Dialogflow intent name
     let intentMap = new Map();
     intentMap.set('Default Welcome Intent', welcome);
