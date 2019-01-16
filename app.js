@@ -66,7 +66,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 );
 
 //weather intent
-app.post('/ai', (req, res) => {
+app.post('/fulfillment', (req, res) => {
     if (req.body.result.action === 'weather') {
       let city = req.body.result.parameters['JapanCity'];
       let restUrl ="http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=f94fb06603ef464c16a935d57b3e2eb1";
