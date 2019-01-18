@@ -55,17 +55,14 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
         let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
         request(url, function (err, response, body) {
-        if(err){
-            console.log('error:', error);
-        } else {
             let weather = JSON.parse(body)
             let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-        }
-     });
+        
+     
         agent.add(url);
         agent.add(message);
         agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']);
-    
+    });
         //end of weather intent
     
     }
