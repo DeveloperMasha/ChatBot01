@@ -48,8 +48,14 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 
     // Weather Intent
     function tellweatherfunction(agent) {
-        let city = agent.parameters['JapanCity']; 
-        //const city = agent.parameters['JapanCity'];    
+        let url = 'http://api.openweathermap.org/data/2.5/weather?q='+agent.parameters['JapanCity']+'&appid=f94fb06603ef464c16a935d57b3e2eb1';
+        request(url, function (err, response, body) {
+            if(err){
+              console.log('error:', error);
+            } else {
+              console.log('body:', body);
+            }
+        });
         agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']);
         //end of weather intent
     
