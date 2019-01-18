@@ -50,7 +50,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     function tellweatherfunction(agent) {
         let city = agent.parameters['JapanCity']; 
         //const city = agent.parameters['JapanCity'];    
-        agent.add(agent.parameters['JapanCity']+' weather in ');
+        agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']);
         //end of weather intent
     
     }
