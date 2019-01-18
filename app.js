@@ -48,8 +48,16 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 
     // Weather Intent
     function tellweatherfunction(agent) {
-       
+        let url = 'http://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=f94fb06603ef464c16a935d57b3e2eb1';
+        request(url, function (err, response, body) {
+            if(err){
+              agent.add(console.log('error:', error));
+            } else {
+             agent.add(console.log('body:', body));
+            }
+        });
         agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']);
+    
         //end of weather intent
     
     }
