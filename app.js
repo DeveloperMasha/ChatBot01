@@ -50,7 +50,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     function tellweatherfunction(agent) {
         var city = agent.parameters.JapanCity;
         const programmingLanguage = agent.parameters.ProgrammingLanguages;
-        agent.add('The weather is good!'+${city});
+        agent.add('The weather is good!'+${JapanCity});
         //end of weather intent
     
     }
