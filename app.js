@@ -48,8 +48,9 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 
     // Weather Intent
     function tellweatherfunction(agent) {
-       //var city = request.queryResult.parameters.JapanCity
-        agent.add('The weather is good!');
+        var city = agent.parameters.JapanCity;
+        const programmingLanguage = agent.parameters.ProgrammingLanguages;
+        agent.add('The weather is good!'+${city});
         //end of weather intent
     
     }
@@ -64,7 +65,6 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     agent.handleRequest(intentMap);
 })
 );
-
 
 
 //Start the express server to listen to a port in the server
