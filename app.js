@@ -50,6 +50,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     function tellweatherfunction(agent) {
         const language = agent.parameters.language;
         const programmingLanguage = agent.parameters.ProgrammingLanguages;
+        console.log("test");
         if (language) {
             agent.add("Wow! I didn't know you knew ${language}");
         }
