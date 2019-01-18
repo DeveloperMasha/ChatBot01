@@ -60,10 +60,10 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
         } else {
             let weather = JSON.parse(body)
             let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-            agent.add(message);
         }
      });
         agent.add(url);
+        agent.add(message);
         agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']);
     
         //end of weather intent
