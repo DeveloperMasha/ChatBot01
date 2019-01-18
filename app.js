@@ -59,7 +59,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
             agent.add("What language do you know?")
         }
        
-        agent.add('The weather is good!'+${JapanCity});
+        agent.add('The weather is good!${JapanCity}');
         //end of weather intent
     
     }
