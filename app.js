@@ -50,7 +50,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     function tellweatherfunction(agent) {
         const language = agent.parameters.language;
         const programmingLanguage = agent.parameters.ProgrammingLanguages;
-        console.log("test");
+        //console.log("test");
         if (language) {
             agent.add("Wow! I didn't know you knew ${language}");
         }
@@ -60,7 +60,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
             agent.add("What language do you know?")
         }
        
-        agent.add('The weather is good!${JapanCity}');
+        agent.add('The weather is good!$');
         //end of weather intent
     
     }
