@@ -63,6 +63,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
             agent.add(message);
         }
      });
+        agent.add(url);
         agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']);
     
         //end of weather intent
