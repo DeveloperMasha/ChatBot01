@@ -48,7 +48,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 
     // Weather Intent
     function tellweatherfunction(agent) {
-        let url = 'http://api.openweathermap.org/data/2.5/weather?q='+agent.parameters['JapanCity']+'&appid=f94fb06603ef464c16a935d57b3e2eb1';
+        let url = 'http://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=f94fb06603ef464c16a935d57b3e2eb1';
         request(url, function (err, response, body) {
             if(err){
               console.log('error:', error);
