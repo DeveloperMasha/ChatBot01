@@ -58,7 +58,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
     //    let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
     
         agent.add(url);
-        agent.add(weather);
+    //    agent.add(weather);
         agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']);
         //end of weather intent
     
