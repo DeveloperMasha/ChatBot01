@@ -72,6 +72,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
             agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
             agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate, whereas Summer (Jun–Sep) is hot. Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
         }
+        agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate, whereas Summer (Jun–Sep) is hot. Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
         //end of weather intent
     
     }
