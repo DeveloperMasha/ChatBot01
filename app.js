@@ -65,7 +65,13 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
             agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
         }
         else if (agent.parameters['Seasons'] == "Summer"){
-            agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally hot');
+            if (agent.parameters['JapanCity']=="Hokkaido") {
+                agent.add('Summer in Hokkaido is coolder and the temperature in Hokkaido is around 20 ℃. ');
+            }
+            else {
+                agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally hot');
+            }
+  
         }
         else if (agent.parameters['Seasons'] == "Autumn"){
             agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
