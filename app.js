@@ -60,7 +60,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 
         if (agent.parameters['Seasons'] == "Winter") { 
             if (agent.parameters['JapanCity'] == "Hokkaido"){
-                agent.add("It is the coldest month in Hokkaido. No matter where you are in this vast prefecture, you'll feel really cold.");
+                agent.add("It has the coldest months in Hokkaido. No matter where you are in this vast prefecture, you'll feel really cold.");
                 agent.add("Average temperatures lie around -4°C (25°F). When it's cold, it gets as low as -6°C (21°F), and it's around -1°C (30°F) even when it's not so cold");
             }
             else{
@@ -89,7 +89,13 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
   
         }
         else if (agent.parameters['Seasons'] == "Autumn"){
-            agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
+            if (agent.parameters['JapanCity'=="Hokkaido"]){
+                agent.add("Hokkaido begins to get ready for autumn after August, and the first snow is observed in mid-to-late October. At that time, mornings and evenings are fairly chilly.");
+            }
+            else{            
+                agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
+            }
+
         }
       
         //end of weather intent
