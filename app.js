@@ -48,11 +48,19 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
 
     // Weather Intent
     function tellweatherfunction(agent) {
+    //    let request = require('request');
+
+        let apiKey = 'f94fb06603ef464c16a935d57b3e2eb1';
+        let city = 'portland';
         let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
-         agent.add(url);
-         agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']);
-    //end of weather intent
+    //    let weather = JSON.parse(body)
+    //    let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+        
+        agent.add(url);
+    //    agent.add(message);
+        agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']);
+        //end of weather intent
     
     }
 
