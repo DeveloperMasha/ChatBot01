@@ -75,6 +75,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
             }
             else{
                 agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
+                agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate. Summer (Jun–Sep) is hot.  Unlike Hokkaido, Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
             }
         }
         else if (agent.parameters['Seasons'] == "Summer"){
