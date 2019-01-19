@@ -62,15 +62,15 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
         }
         else if (agent.parameters['Seasons'] == "Spring"){
             agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
-            agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate. Summer (Jun–Sep) is hot. Winter (Dec–Feb) is mild.');
+            agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate. The Summer starts from (Jun–Sep) is hot. Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
         }
         else if (agent.parameters['Seasons'] == "Summer"){
             agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally hot');
-            agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate. Summer (Jun–Sep) is hot. Winter (Dec–Feb) is mild.');
+            agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate and Summer starts from Jun–Sep. Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
         }
         else if (agent.parameters['Seasons'] == "Autumn"){
             agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
-            agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate. Summer (Jun–Sep) is hot. Winter (Dec–Feb) is mild.');
+            agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate, whereas Summer (Jun–Sep) is hot. Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
         }
         //end of weather intent
     
