@@ -63,10 +63,19 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
                 agent.add("It is the coldest month in Hokkaido. No matter where you are in this vast prefecture, you'll feel really cold.");
                 agent.add("Average temperatures lie around -4°C (25°F). When it's cold, it gets as low as -6°C (21°F), and it's around -1°C (30°F) even when it's not so cold");
             }
-            agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally mild');
+            else{
+                agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally mild');
+                agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate. Summer (Jun–Sep) is hot.  Unlike Hokkaido, Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
+            }
         }
         else if (agent.parameters['Seasons'] == "Spring"){
-            agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
+            if (agent.parameters['JapanCity']== "Hokkaido"){
+               agent.add("In March the Temperature is still sometimes below Freezing. In Hokkaido the cherry blossoms come out in May!");
+               agent.add(" Although the cherry blossoms start budding on the mainland in March, temperatures can still be below freezing in Hokkaido.");
+            }
+            else{
+                agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
+            }
         }
         else if (agent.parameters['Seasons'] == "Summer"){
             if (agent.parameters['JapanCity']=="Hokkaido") {
@@ -74,13 +83,14 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
             }
             else {
                 agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally hot');
+                agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate. Summer (Jun–Sep) is hot.  Unlike Hokkaido, Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
             }
   
         }
         else if (agent.parameters['Seasons'] == "Autumn"){
             agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
         }
-        agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate. Summer (Jun–Sep) is hot.  Unlike Hokkaido, Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
+      
         //end of weather intent
     
     }
