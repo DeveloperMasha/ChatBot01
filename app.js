@@ -89,11 +89,12 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
   
         }
         else if (agent.parameters['Seasons'] == "Autumn"){
-            if (agent.parameters['JapanCity'=="Hokkaido"]){
+            if (agent.parameters['JapanCity']=="Hokkaido"){
                 agent.add("Hokkaido begins to get ready for autumn after August, and the first snow is observed in mid-to-late October. At that time, mornings and evenings are fairly chilly.");
             }
             else{            
                 agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally cooling');
+                agent.add(agent.parameters['JapanCity']+' has a humid subtropical climate. Summer (Jun–Sep) is hot.  Unlike Hokkaido, Winter (Dec–Feb) in '+agent.parameters['JapanCity']+' is mild.');
             }
 
         }
