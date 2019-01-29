@@ -62,6 +62,7 @@ app.post('/fulfillment', functions.https.onRequest((request, response) => {
             if (agent.parameters['JapanCity'] == "Hokkaido"){
                 agent.add("It has the coldest months in Hokkaido. No matter where you are in this vast prefecture, you'll feel really cold.");
                 agent.add("Average temperatures lie around -4°C (25°F). When it's cold, it gets as low as -6°C (21°F), and it's around -1°C (30°F) even when it's not so cold");
+                imageUrl: 'http://weknowyourdreams.com/images/robot/robot-02.jpg';
             }
             else{
                 agent.add(agent.parameters['JapanCity']+' weather in '+agent.parameters['Seasons']+' is generally mild');
